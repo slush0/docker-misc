@@ -9,3 +9,6 @@ Bitcoin Core in Docker
 * Run "./start.sh" to start bitcoind in container
 * Run "./stop.sh" to stop cointainer anytime
 * Run "./bitcoin-cli getinfo" and use bitcoind as usual...
+
+Hints:
+* Put "testnet=1" in data/bitcoin.conf to switch to testnet3
