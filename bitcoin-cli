@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -t -v $(pwd)/data:/.bitcoin bitcoind $*
+
