@@ -1,0 +1,29 @@
+FROM debian:stable-slim
+
+# Install & update base system
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y wget
+
+ENV VERSION=24.0.1
+ENV USER_ID=1000
+ENV DOWNLOAD_URL=https://bitcoincore.org/bin/bitcoin-core-$VERSION/bitcoin-$VERSION-x86_64-linux-gnu.tar.gz
+
+# Download
+WORKDIR /tmp
+RUN wget -O bitcoin.tgz $DOWNLOAD_URL
+RUN tar xf bitcoin.tgz
+RUN rm bitcoin.tgz
+RUN mv bitcoin* bitcoin
+RUN mv bitcoin/bin/* /usr/bin/
+RUN rm -rf bitcoin
+
+EXPOSE 8332
+EXPOSE 8333
+EXPOSE 18332
+EXPOSE 18333
+
+VOLUME /data
+WORKDIR /data
+
+CMD ["bitcoind", "-datadir=/data"]
+
