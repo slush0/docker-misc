@@ -1,3 +1,4 @@
+# Compile Bitcoin Core from source
 FROM debian:stable-slim
 
 # Install & update base system

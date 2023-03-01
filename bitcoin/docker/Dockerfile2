@@ -1,3 +1,4 @@
+# Alternative Dockerfile: Download release binaries from bitcoincore.org
 FROM debian:stable-slim
 
 # Install & update base system
