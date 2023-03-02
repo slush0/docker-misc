@@ -12,3 +12,8 @@ Bitcoin Core in Docker
 * Run "./start.sh" to start bitcoind in container
 * Run "./stop.sh" to stop container at anytime
 * Run "./bitcoin-cli -getinfo" and use bitcoind as usual.
+
+electrs
+-------
+
+Electrum Server in Rust, in Docker
