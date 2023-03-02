@@ -1,13 +1,10 @@
 # Alternative Dockerfile: Download release binaries from bitcoincore.org
-FROM debian:stable-slim
-
-# Install & update base system
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y wget
+FROM debian:stable-slim as build
 
 ENV VERSION=24.0.1
-ENV USER_ID=1000
 ENV DOWNLOAD_URL=https://bitcoincore.org/bin/bitcoin-core-$VERSION/bitcoin-$VERSION-x86_64-linux-gnu.tar.gz
+
+RUN apt update && apt install -y wget
 
 # Download
 WORKDIR /tmp
@@ -15,8 +12,12 @@ RUN wget -O bitcoin.tgz $DOWNLOAD_URL
 RUN tar xf bitcoin.tgz
 RUN rm bitcoin.tgz
 RUN mv bitcoin* bitcoin
-RUN mv bitcoin/bin/* /usr/bin/
-RUN rm -rf bitcoin
+
+# ---------------------
+FROM debian:stable-slim
+COPY --from=build /tmp/bitcoin/bin/* /usr/bin
+
+ENV USER_ID=1000
 
 EXPOSE 8332
 EXPOSE 8333
