@@ -17,3 +17,13 @@ electrs
 -------
 
 Electrum Server in Rust, in Docker
+
+tor
+---
+
+Tor relay node
+
+text-generation-webui
+---------------------
+
+Text generation web UI. Dockerized https://github.com/oobabooga/text-generation-webui

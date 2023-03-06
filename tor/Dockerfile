@@ -9,14 +9,6 @@ RUN apt install -y apt-transport-https wget gpg
 RUN echo "deb [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org $DIST main" > /etc/apt/sources.list.d/tor.list
 RUN wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/tor-archive-keyring.gpg > /dev/null
 
-#RUN echo "Unattended-Upgrade::Origins-Pattern { \n \
-#     "origin=Debian,codename=\${distro_codename},label=Debian-Security"; \n \
-#     "origin=TorProject"; \n \
-#}; \n \
-#Unattended-Upgrade::Package-Blacklist { \n \
-#};" > /etc/apt/apt.conf.d/50unattended-upgrades
-#RUN echo "APT::Periodic::AutocleanInterval \"5\";" >> /etc/apt/apt.conf.d/20auto-upgrades
-
 RUN apt update && apt install -y tor nyx deb.torproject.org-keyring
 
 # ORPort
