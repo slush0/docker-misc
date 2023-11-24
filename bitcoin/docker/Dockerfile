@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y
 # Install git and build tools
 RUN apt-get install -y git build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev bsdmainutils libzmq3-dev
 
-ENV BITCOIND_VERSION v24.0.1
+ENV BITCOIND_VERSION v25.1
 
 # Clone bitcoind
 RUN git clone -b $BITCOIND_VERSION https://github.com/bitcoin/bitcoin.git /bitcoin-git
