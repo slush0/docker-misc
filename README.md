@@ -13,6 +13,12 @@ Bitcoin Core in Docker
 * Run "./stop.sh" to stop container at anytime
 * Run "./bitcoin-cli -getinfo" and use bitcoind as usual.
 
+Pushing to Docker Hub
+
+* Run "docker login ..."
+* Run "docker build -t slush0/bitcoin:<VERSION>" docker/"
+* Run "docker push slush0/bitcoin:<VERSION>"
+
 electrs
 -------
 
