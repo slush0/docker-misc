@@ -33,3 +33,15 @@ text-generation-webui
 ---------------------
 
 Text generation web UI. Dockerized https://github.com/oobabooga/text-generation-webui
+
+hardwario-gateway
+-----------------
+
+* Run "docker build --network=host -t hardwario-gateway ." to build proper image
+
+Pushing to Docker Hub
+
+* Run "docker login ..."
+* Run "docker build --network host -t slush0/hardwario-gateway:latest ."
+* Run "docker push slush0/hardwario-gateway:latest"
+
