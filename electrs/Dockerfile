@@ -4,7 +4,7 @@ FROM debian:stable-slim as build
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y wget clang cmake build-essential librocksdb-dev cargo
 
-ENV VERSION=0.9.12
+ENV VERSION=0.10.4
 ENV DOWNLOAD_URL=https://github.com/romanz/electrs/archive/refs/tags/v$VERSION.tar.gz
 
 # Download
