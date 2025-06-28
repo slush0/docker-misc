@@ -8,16 +8,20 @@ bitcoin
 
 Bitcoin Core in Docker
 
+```
 * Run "docker build -t bitcoin docker/" to generate proper image
 * Run "./start.sh" to start bitcoind in container
 * Run "./stop.sh" to stop container at anytime
 * Run "./bitcoin-cli -getinfo" and use bitcoind as usual.
+```
 
 Pushing to Docker Hub
 
+```
 * Run "docker login ..."
 * Run "docker build -t slush0/bitcoin:<VERSION>" docker/"
 * Run "docker push slush0/bitcoin:<VERSION>"
+```
 
 electrs
 -------
@@ -37,11 +41,12 @@ Text generation web UI. Dockerized https://github.com/oobabooga/text-generation-
 hardwario-gateway
 -----------------
 
-* Run "docker build --network=host -t hardwario-gateway ." to build proper image
+```* Run "docker build --network=host -t hardwario-gateway ." to build proper image```
 
 Pushing to Docker Hub
 
+```
 * Run "docker login ..."
 * Run "docker build --network host -t slush0/hardwario-gateway:latest ."
 * Run "docker push slush0/hardwario-gateway:latest"
-
+```
