@@ -1,10 +1,10 @@
-FROM debian:stable-slim as build
+FROM debian:stable-slim AS build
 
 # Install & update base system
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y wget clang cmake build-essential librocksdb-dev cargo
 
-ENV VERSION=0.10.4
+ENV VERSION=0.10.9
 ENV DOWNLOAD_URL=https://github.com/romanz/electrs/archive/refs/tags/v$VERSION.tar.gz
 
 # Download
@@ -41,7 +41,6 @@ ENV ELECTRS_DAEMON_RPC_ADDR bitcoin:8332
 ENV ELECTRS_ELECTRUM_RPC_ADDR 0.0.0.0:50001
 ENV ELECTRS_MONITORING_ADDR 0.0.0.0:4224
 ENV ELECTRS_VERBOSITY 2
-ENV ELECTRS_TIMESTAMP 1
 
 STOPSIGNAL SIGINT
 
