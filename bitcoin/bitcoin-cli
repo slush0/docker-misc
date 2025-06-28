@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker exec -ti `cat bitcoin.cid` bitcoin-cli -datadir=/data $*
+docker exec -ti `cat bitcoind.cid` bitcoin-cli -datadir=/data $*
 
